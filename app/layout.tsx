@@ -15,7 +15,29 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Asgaia Labs — Tools for Neurodivergent Minds",
   description: "Empowering neurodivergent individuals with inclusive, accessible tools.",
+  openGraph: {
+    title: "Asgaia Labs — Tools for Neurodivergent Minds",
+    description: "Empowering neurodivergent individuals with inclusive, accessible tools.",
+    url: "https://asgaialabs.com",
+    siteName: "Asgaia Labs",
+    images: [
+      {
+        url: "https://asgaialabs.com/asgaia.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "Asgaia Labs logo and tagline",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Asgaia Labs — Tools for Neurodivergent Minds",
+    description: "Empowering neurodivergent individuals with inclusive, accessible tools.",
+    images: ["https://asgaialabs.com/asgaia.jpg"],
+  },
 };
+
 
 export default function RootLayout({
   children,

@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Heart, Users, Lightbulb, Shield, Mail, Phone } from "lucide-react"
+import { Heart, Users, Lightbulb, Shield, Mail, Phone, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/footer"
@@ -19,9 +19,8 @@ export default function Page() {
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-teal-50 to-green-50">
       <header className="px-4 lg:px-6 h-16 flex items-center bg-white/80 backdrop-blur-sm border-b border-teal-100">
         <Link href="/" className="flex items-center justify-center">
-          <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-green-500 rounded-lg flex items-center justify-center">
-            <Heart className="h-5 w-5 text-white" />
-          </div>
+        <Image src="/asgaia.jpg" alt="Asgaia Labs Logo" width={32} height={32} className="rounded" />
+
           <span className="ml-2 text-xl font-bold text-gray-800">Asgaia Labs</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
@@ -53,7 +52,7 @@ export default function Page() {
               </div>
               <div className="mx-auto">
                 <Image
-                  src="/placeholder.svg"
+                  src="/people_working.jpg"
                   width={500}
                   height={500}
                   alt="Diverse people using assistive technology"
@@ -99,11 +98,11 @@ export default function Page() {
             </div>
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <Image
-                src="/placeholder.svg"
+                src="/using_laptop.jpg"
                 width={600}
                 height={400}
                 alt="Accessible tools screenshot"
-                className="rounded-2xl object-cover shadow-xl"
+                className="w-full max-h-[600px] object-cover rounded-2xl shadow-xl"
               />
               <ul className="space-y-6">
                 {[
@@ -134,9 +133,9 @@ export default function Page() {
             </div>
             <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
               {[
-                { name: "Sarah M.", role: "ADHD Advocate", quote: "Finally, tools that work with my brain. The focus modes are a game-changer." },
-                { name: "Alex R.", role: "Autistic Developer", quote: "Being part of the beta community helped shape tools that *actually* work for me." },
-                { name: "Jordan L.", role: "Dyslexic Designer", quote: "I&apos;ve never felt so confident reading online before. Thank you!" },
+                { name: "Pavithra M.", role: "ADHD, Advocate & Aspiring Musician", quote: "Finally, tools that work with my brain. The focus modes are a game-changer." },
+                { name: "David V.", role: "Autistic, Games Developer", quote: "Being part of the beta community helped shape tools that *actually* work for me." },
+                { name: "Akshat S.", role: "Dyslexic, BBA student", quote: "I have never felt so confident reading online before. Thank you!" },
               ].map(({ name, role, quote }, i) => (
                 <Card key={i} className="bg-white/80 border-teal-200">
                   <CardHeader>
@@ -161,11 +160,18 @@ export default function Page() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-teal-500" />
-                  <span className="text-gray-700">hello@asgaialabs.com</span>
+                  <span className="text-gray-700">connect@asgaialabs.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-teal-500" />
-                  <span className="text-gray-700">+91 9876543210</span>
+                  <span className="text-gray-700">+91 9745261213</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-teal-500 mt-1" />
+                  <span className="text-gray-700">
+                    Asgaia Labs Private Limited,<br/> #17, 2nd Floor, 7th Main,<br />
+                    II Stage, Indiranagar, Bengaluru, Karnataka 560038
+                  </span>
                 </div>
               </div>
             </div>

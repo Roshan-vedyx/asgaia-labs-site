@@ -1,56 +1,100 @@
 'use client'
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+  Card, CardContent, CardDescription, CardHeader, CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Heart, Users, Lightbulb, Shield, Mail, Phone, MapPin } from "lucide-react"
+import {
+  Heart, Users, Lightbulb, Shield, Mail, Phone, MapPin, Menu, X,
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/footer"
 
 export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const navItems = [
+    { href: "#about", label: "About" },
+    { href: "#tools", label: "Our Tools" },
+    { href: "#community", label: "Community" },
+    { href: "#contact", label: "Contact" },
+  ]
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-teal-50 to-green-50">
+      {/* Navbar */}
       <header className="px-4 lg:px-6 h-16 flex items-center bg-white/80 backdrop-blur-sm border-b border-teal-100">
-        <Link href="/" className="flex items-center justify-center">
-        <Image src="/asgaia.jpg" alt="Asgaia Labs Logo" width={32} height={32} className="rounded" />
-
+        <Link href="/" className="flex items-center">
+          <Image src="/asgaia.jpg" alt="Asgaia Labs Logo" width={32} height={32} className="rounded" />
           <span className="ml-2 text-xl font-bold text-gray-800">Asgaia Labs</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link href="#about" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">About</Link>
-          <Link href="#tools" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">Our Tools</Link>
-          <Link href="#community" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">Community</Link>
-          <Link href="#contact" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">Contact</Link>
+        
+        {/* Desktop nav */}
+        <nav className="ml-auto hidden md:flex gap-4 sm:gap-6">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+              {item.label}
+            </Link>
+          ))}
         </nav>
+
+        {/* Mobile menu button */}
+        <button
+          className="ml-auto md:hidden p-2 rounded-md focus:outline-none"
+          aria-label="Toggle menu"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </header>
 
+      {/* Mobile menu */}
+      {menuOpen && (
+        <nav className="md:hidden bg-white shadow-md">
+          <ul className="flex flex-col">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="block px-4 py-3 text-gray-800 hover:bg-teal-100"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
       <main className="flex-1">
-        {/* Hero */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        {/* Hero Section */}
+        <section className="w-full pt-20 sm:pt-32 pb-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] items-center">
               <div className="flex flex-col justify-center space-y-6">
-                <div className="space-y-4">
-                  <h1 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl text-gray-800 leading-tight">
-                    Technology that <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-green-600">understands</span> you
-                  </h1>
-                  <p className="max-w-[600px] text-gray-600 md:text-xl leading-relaxed">
-                    At Asgaia Labs, we create tools built by and for neurodivergent minds — helping you learn, focus, and thrive.
-                  </p>
-                </div>
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl text-gray-800 leading-tight">
+                  Technology that{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-green-600">
+                    understands
+                  </span>{" "}
+                  you
+                </h1>
+                <p className="max-w-[600px] text-gray-600 md:text-xl leading-relaxed">
+                  At Asgaia Labs, we create tools built by and for neurodivergent minds — helping you learn, focus, and thrive.
+                </p>
                 <div className="flex flex-col gap-3 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-gradient-to-r from-teal-500 to-green-600 text-white shadow-lg">Explore Our Tools</Button>
-                  <Button variant="outline" size="lg" className="border-teal-300 text-teal-700 hover:bg-teal-50">Join Our Community</Button>
+                  <Button size="lg" className="bg-gradient-to-r from-teal-500 to-green-600 text-white shadow-lg">
+                    Explore Our Tools
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-teal-300 text-teal-700 hover:bg-teal-50">
+                    Join Our Community
+                  </Button>
                 </div>
               </div>
-              <div className="mx-auto">
+              <div className="mx-auto mt-6">
                 <Image
                   src="/people_working.jpg"
                   width={500}

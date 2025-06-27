@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Heart, Users, Lightbulb, Shield, Mail, Phone, MapPin } from "lucide-react"
+import { Heart, Users, Lightbulb, Shield, Mail, Phone, } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/footer"
@@ -90,7 +90,7 @@ export default function Page() {
                 Built with empathy, designed for everyone
               </h2>
               <p className="max-w-3xl mx-auto text-gray-600 md:text-xl">
-                We believe neurodiversity is a strength. That’s why we build simple, beautiful tools that support the way your brain works — not how someone else thinks it should.
+                We believe neurodiversity is a strength. That&apos;s why we build simple, beautiful tools that support the way your brain works — not how someone else thinks it should.
               </p>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-8">
@@ -181,7 +181,7 @@ export default function Page() {
                 Community
               </div>
               <h2 className="text-3xl font-bold sm:text-5xl text-gray-800">
-                You're not alone in this journey
+                You&apos;re not alone in this journey
               </h2>
               <p className="max-w-3xl mx-auto text-gray-600 md:text-xl">
                 Join thousands of neurodivergent individuals shaping the future of accessibility.
@@ -202,7 +202,7 @@ export default function Page() {
                 {
                   name: "Jordan L.",
                   role: "Dyslexic Designer",
-                  quote: "I’ve never felt so confident reading online before. Thank you!"
+                  quote: "I&apos;ve never felt so confident reading online before. Thank you!"
                 },
               ].map(({ name, role, quote }, i) => (
                 <Card key={i} className="bg-white/80 border-teal-200">
@@ -221,9 +221,9 @@ export default function Page() {
         <section id="contact" className="w-full py-24 bg-white">
           <div className="container px-4 md:px-6 mx-auto grid gap-10 lg:grid-cols-2">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-gray-800">Let’s connect</h2>
+              <h2 className="text-3xl font-bold text-gray-800">Let&apos;s connect</h2>
               <p className="text-gray-600 text-lg">
-                Interested in our tools? Have feedback or ideas? We'd love to hear from you.
+                Interested in our tools? Have feedback or ideas? We&apos;d love to hear from you.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -240,7 +240,7 @@ export default function Page() {
               <CardHeader>
                 <CardTitle className="text-gray-800">Get in touch</CardTitle>
                 <CardDescription className="text-gray-600">
-                  Send us a message and we’ll get back to you soon.
+                  Send us a message and we&apos;ll get back to you soon.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">

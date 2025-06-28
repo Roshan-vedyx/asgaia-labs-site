@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+  alternates: {
+    canonical: "https://asgaialabs.com"
+  },
   twitter: {
     card: "summary_large_image",
     title: "Asgaia Labs — Tools for Neurodivergent Minds",

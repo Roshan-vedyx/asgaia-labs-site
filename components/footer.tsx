@@ -16,11 +16,8 @@ export default function Footer() {
         © {year ?? "2024"} Asgaia Labs. Built with 💚 for neurodivergent minds.
       </p>
       <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-        <Link
-          href="/privacy-policy"
-          className="text-xs hover:underline underline-offset-4 text-gray-600"
-        >
-          Privacy Policy
+        <Link href="/privacy" className="text-xs hover:underline underline-offset-4 text-gray-600">
+        Privacy Policy
         </Link>
         <Link
           href="/accessibility"
@@ -28,11 +25,8 @@ export default function Footer() {
         >
           Accessibility Statement
         </Link>
-        <Link
-          href="/community-guidelines"
-          className="text-xs hover:underline underline-offset-4 text-gray-600"
-        >
-          Community Guidelines
+        <Link href="/terms" className="text-sm text-gray-600 hover:text-teal-600">
+        Terms of Service
         </Link>
       </nav>
     </footer>

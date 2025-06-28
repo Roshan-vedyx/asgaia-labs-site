@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://asgaialabs.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://asgaialabs.com/#about</loc>
+  </url>
+  <url>
+    <loc>https://asgaialabs.com/#tools</loc>
+  </url>
+  <url>
+    <loc>https://asgaialabs.com/#community</loc>
+  </url>
+  <url>
+    <loc>https://asgaialabs.com/#contact</loc>
+  </url>
+</urlset>
